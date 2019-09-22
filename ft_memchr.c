@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 20:58:41 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/21 21:52:46 by hcloves          ###   ########.fr       */
+/*   Created: 2019/09/22 19:02:01 by hcloves           #+#    #+#             */
+/*   Updated: 2019/09/22 20:11:58 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
- 	int i;
-
-	i = 0;
-	while (src[i] != '\0')
+	unsigned char *ptrs;
+	ptrs = (unsigned char*)s;
+	while (n--)
 	{
-		dst[i] = src[i];
-		i++;
+		if (*ptrs == (unsigned char)c)
+			return (ptrs);
+		ptrs++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (NULL);
 }
+/*
+int	main()
+{
+	size_t n = 5;
+	unsigned char s[15] = "roflan";
+	unsigned char c = 'l';
+
+	printf("%s\n", ft_memchr(s, c, n));
+	printf("%s\n", memchr(s, c, n));
+	return (0);
+}*/

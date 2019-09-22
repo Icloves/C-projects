@@ -6,22 +6,23 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 14:30:08 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/17 20:05:37 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/09/21 21:39:04 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
-int main()
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int *buf;
+	unsigned char *ptr;
+	unsigned char s;
 
-	buf = (int*)malloc(sizeof(int) * 100);
-	memset(buf, '\0', sizeof(buf));
-	memset(buf, '1', 9);
-	printf("%s", (char*) buf);
-	free(buf);
-	return (0);
+	ptr = (unsigned char *)b;
+	s = (unsigned char)c;
+	while (len--)
+		*ptr++ = s;
+	return (b);
 }

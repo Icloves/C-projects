@@ -6,13 +6,13 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 19:13:40 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/17 19:24:02 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/09/21 13:23:01 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	int		len;
 	char	*temp;
