@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 20:58:41 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/23 17:48:02 by hcloves          ###   ########.fr       */
+/*   Created: 2019/09/23 11:39:49 by hcloves           #+#    #+#             */
+/*   Updated: 2019/09/23 12:23:49 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
- 	int i;
-
+	int i;
+	char *res;
+	
+	if (!s || !(res = (char*)malloc(sizeof(char) * ft_strlen(s) + 1)))
+		return (NULL);
 	i = 0;
-	while (src[i] != '\0')
+	while (s[i])
 	{
-		dst[i] = src[i];
+		res[i] = f(s[i]);
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	res[i] = '\0';
+	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 12:50:37 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/22 23:19:16 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/09/24 13:55:32 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 # include <stdlib.h>
 # include <string.h>
 
+char	**ft_strsplit(char const *s, char c);
+char	*ft_strtrim(char const *s);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+int		ft_strequ(char const *s1, char const *s2);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_strmap(char const *s, char (*f)(char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_strclr(char *s);

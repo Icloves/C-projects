@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 20:58:41 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/23 17:48:02 by hcloves          ###   ########.fr       */
+/*   Created: 2019/09/23 12:35:10 by hcloves           #+#    #+#             */
+/*   Updated: 2019/09/23 13:31:46 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+int		ft_strequ(char const *s1, char const *s2)
 {
- 	int i;
+	int i;
 
 	i = 0;
-	while (src[i] != '\0')
+	if (ft_strlen(s1) != ft_strlen(s2))
+		return (0);
+	while (s1[i] && s2[i])
 	{
-		dst[i] = src[i];
+		if (s1[i] != s2[i])
+			return (0);
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (1);
 }
+/*
+int	main()
+{
+	printf("%d", ft_strequ("lols", "lol"));
+	return (0);
+}*/
