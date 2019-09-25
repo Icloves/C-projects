@@ -6,7 +6,7 @@
 #    By: hcloves <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/13 20:40:24 by hcloves           #+#    #+#              #
-#    Updated: 2019/09/24 13:55:22 by hcloves          ###   ########.fr        #
+#    Updated: 2019/09/25 12:11:58 by hcloves          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC = ft_strlen.c ft_strdup.c ft_putchar.c ft_strncpy.c ft_strcpy.c ft_bzero.c f
 	  ft_isalpha.c ft_isdigit.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c \
 	  ft_memcmp.c ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c ft_striter.c \
 	  ft_striteri.c ft_strmap.c ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c \
-	  ft_strtrim.c ft_strtrim.c ft_strsplit.c
+	  ft_strtrim.c ft_strtrim.c ft_strsplit.c ft_itoa.c ft_putstr.c ft_putendl.c ft_putnbr.c \
+	  ft_putnbr_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putchar_fd.c
 
 $(NAME):
 			gcc -Wall -Wextra -Werror -I $(HEADERS) -c $(SRC)

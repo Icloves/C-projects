@@ -6,7 +6,7 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 14:03:55 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/24 18:16:18 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/09/25 10:30:32 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ static int        ft_clen(int n)
 	return (len + 1);
 }
 
+static char	*ft_revstr(int i, char *numstr2, char *numstr, int count, int sign)
+{
+	if (sign)
+		numstr2[count++] = '-';
+	while (i >= 0)
+		numstr2[count++] = numstr[i--];
+	numstr2[count] = '\0';
+	return (numstr2);
+}
+
 char    *ft_itoa(int n)
 {
 	int sign;
@@ -30,37 +40,33 @@ char    *ft_itoa(int n)
 	char *numstr;
 	char *numstr2;
 
-	i = 0;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	i = -1;
 	sign = (n < 0) ? 1 : 0;
-	if (sign)
-		n *= -1;
+	n = (sign == 1) ? (n *= -1) : (n *= 1);
 	count = ft_clen(n);
-	if ((numstr = (char *)malloc(sizeof(char *) * (count + 1))))
+	if (!(numstr = ft_strnew(count)) || !(numstr2 = ft_strnew(count)))
 		return (NULL);
-	while (i < count)
+	while (i < count - 1)
 	{
-		numstr[i++] = (n % 10) + '0';
+		numstr[++i] = (n % 10) + '0';
 		n = n / 10;
 	}
-	if (!(numstr2 = (char *)malloc(sizeof(char *) * (count + 2))))
-		return (NULL);
 	count = 0;
-	if (sign)
-		numstr2[count++] = '-';
-		//count++;
-	i--;
-	while (i >= 0)
-		numstr2[count++] = numstr[i--];
-		//i--;
-		//count++;
-	numstr2[count] = '\0';
-	return (numstr2);
+	return (ft_revstr(i, numstr2, numstr, count, sign));
+//	if (sign)
+//		numstr2[count++] = '-';
+//	while (i >= 0)
+//		numstr2[count++] = numstr[i--];
+//	numstr2[count] = '\0';
+//	return (numstr2);
 }
-
+/*
 int main()
 {
 	size_t n;
-	n = -103120;
+	n = -2147483648;
 	printf("%s", ft_itoa(n));
 	return 0;
-}
+}*/

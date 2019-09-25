@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 20:11:07 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/25 10:36:21 by hcloves          ###   ########.fr       */
+/*   Created: 2019/09/25 10:45:48 by hcloves           #+#    #+#             */
+/*   Updated: 2019/09/25 11:00:08 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+void	ft_putnbr(int n)
 {
-	write(1, &c, 1);
+	unsigned nb;
+
+	if (n < 0)
+		ft_putchar('-');
+	if (n < 0)
+		n *= -1;
+	nb = (unsigned) n;
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		ft_putchar(nb + '0');
 }

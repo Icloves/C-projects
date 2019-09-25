@@ -6,7 +6,7 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 12:50:37 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/24 13:55:32 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/09/25 12:12:01 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 # include <stdlib.h>
 # include <string.h>
 
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr(int n);
+void	ft_putendl(char const *s);
+void	ft_putstr(char const *s);
+char	*ft_itoa(int n);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_strtrim(char const *s);
 char	*ft_strjoin(char const *s1, char const *s2);
