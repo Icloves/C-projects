@@ -6,7 +6,7 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/25 10:45:48 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/25 11:00:08 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/09/25 12:55:18 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putnbr(int n)
 		ft_putchar('-');
 	if (n < 0)
 		n *= -1;
-	nb = (unsigned) n;
+	nb = (unsigned)n;
 	if (nb >= 10)
 	{
 		ft_putnbr(nb / 10);

@@ -6,7 +6,7 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 21:36:41 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/22 22:13:21 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/09/25 18:30:05 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnew(size_t size)
 {
-	char *str;
-	size_t i;
+	char	*str;
+	size_t	i;
 
 	i = 0;
 	if (!(str = malloc(size + 1)))

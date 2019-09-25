@@ -6,7 +6,7 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 21:53:48 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/22 21:59:17 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/09/25 18:39:39 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void**)as);
+	if (as)
+	{
+		free(*as);
+		*as = NULL;
+	}
+	return ;
 }

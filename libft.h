@@ -6,7 +6,7 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 12:50:37 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/25 12:12:01 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/09/25 22:59:19 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <stdlib.h>
 # include <string.h>
 
+int		ft_sqrt(int nb);
+void	ft_swap(int *a, int *b);
+int		*ft_range(int min, int max);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);

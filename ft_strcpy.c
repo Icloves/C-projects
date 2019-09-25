@@ -6,7 +6,7 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 20:58:41 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/23 17:48:02 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/09/25 12:30:18 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
- 	int i;
+	int i;
 
 	i = 0;
 	while (src[i] != '\0')

@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/22 20:12:42 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/25 18:37:35 by hcloves          ###   ########.fr       */
+/*   Created: 2019/09/25 22:54:09 by hcloves           #+#    #+#             */
+/*   Updated: 2019/09/25 22:56:41 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int		*ft_range(int min, int max)
 {
-	unsigned char	*ptrs1;
-	unsigned char	*ptrs2;
-	size_t			i;
+	int i;
+	int *arr;
 
-	ptrs1 = (unsigned char*)s1;
-	ptrs2 = (unsigned char*)s2;
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (n--)
+	if (max > min)
 	{
-		if (*ptrs1 != *ptrs2)
-			return (*ptrs1 - *ptrs2);
-		ptrs1++;
-		ptrs2++;
+		i = 0;
+		if (!(arr = (int *)malloc(sizeof(int) * (max - min))))
+			return (0);
+		while (min < max)
+		{
+			arr[i] = min;
+			min++;
+			i++;
+		}
+		return (arr);
 	}
 	return (0);
 }

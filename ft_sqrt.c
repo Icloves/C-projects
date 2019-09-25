@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/22 20:12:42 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/25 18:37:35 by hcloves          ###   ########.fr       */
+/*   Created: 2019/09/25 22:49:15 by hcloves           #+#    #+#             */
+/*   Updated: 2019/09/25 22:50:32 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int		ft_sqrt(int nb)
 {
-	unsigned char	*ptrs1;
-	unsigned char	*ptrs2;
-	size_t			i;
+	int i;
+	int res;
 
-	ptrs1 = (unsigned char*)s1;
-	ptrs2 = (unsigned char*)s2;
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (n--)
+	i = 1;
+	while (nb / 2 > i)
 	{
-		if (*ptrs1 != *ptrs2)
-			return (*ptrs1 - *ptrs2);
-		ptrs1++;
-		ptrs2++;
+		i++;
+		res = i * i;
+		if (res == nb)
+			return (i);
 	}
 	return (0);
 }

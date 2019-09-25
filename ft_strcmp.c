@@ -6,16 +6,16 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 17:40:14 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/21 18:07:53 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/09/25 18:35:42 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int		ft_strcmp(const char *s1, const char *s2)
-{	
+{
 	int i;
-	
+
 	i = 0;
 	while ((s1[i] == s2[i]) && (s1[i] && s2[i]))
 		i++;

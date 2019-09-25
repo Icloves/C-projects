@@ -6,7 +6,7 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 18:21:55 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/20 20:37:14 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/09/25 12:33:13 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strcat(char *s1, const char *s2)
 
 	i = 0;
 	j = 0;
-	//if (*s1 == '\0') //swap with i = 0;
-	//	return (s2);
 	while (s1[i] != '\0')
 		i++;
 	while (s2[j])
@@ -32,15 +30,3 @@ char	*ft_strcat(char *s1, const char *s2)
 	s1[i] = '\0';
 	return (s1);
 }
-/*
-int		main()
-{
-	char s1[50];
-	char s2[50];
-
-	gets(s1);
-	gets(s2);
-	printf("%s\n", strcat(s2, s1));
-	printf("%s", ft_strcat(s2, s1));
-	return 0;
-}*/
