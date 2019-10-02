@@ -6,11 +6,12 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 14:03:55 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/25 22:38:14 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/10/01 16:52:30 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_clen(int n)
 {
@@ -31,6 +32,7 @@ static char	*ft_revstr(int i, char *numstr2, char *numstr, int sign)
 		numstr2[count++] = '-';
 	while (i >= 0)
 		numstr2[count++] = numstr[i--];
+	ft_strdel(&numstr);
 	numstr2[count] = '\0';
 	return (numstr2);
 }

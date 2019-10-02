@@ -6,7 +6,7 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 21:25:52 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/25 18:43:07 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/09/27 12:59:18 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,13 @@ static size_t	ft_wordcount(char const *s, char c)
 static char		*ft_getsword(char *word, char c)
 {
 	char	*strt;
+	size_t	i;
 
+	i = 0;
 	strt = word;
-	while (*word && *word != c)
-		word++;
-	*word = '\0';
+	while (word[i] && word[i] != c)
+		i++;
+	word[i] = '\0';
 	return (ft_strdup(strt));
 }
 
@@ -46,7 +48,7 @@ static void		ft_wordsfree(char **words, size_t i)
 {
 	while (i--)
 		ft_strdel(&(words[i]));
-	free(*words);
+	free(words);
 }
 
 static char		**ft_getsword2(char *s, char c, size_t words_count)

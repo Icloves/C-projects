@@ -6,7 +6,7 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 12:35:10 by hcloves           #+#    #+#             */
-/*   Updated: 2019/09/25 19:13:11 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/10/02 16:45:47 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	if (s1 == NULL || s2 == NULL)
