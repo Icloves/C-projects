@@ -31,7 +31,7 @@ int	main(void)
 
 	int test = 0;
 
-	//Попробовать использовать get_next_line для чтения тетроминок В этот раз должно получится!!!
+	//Попробовать использовать get_next_line для чтения тетроминок В этот раз должно получится!!! ???????????????
 
 
 	fd = open("tetrominos", O_RDONLY);  			//in the real programm we must open second argument!
@@ -69,12 +69,13 @@ int	main(void)
 	char** arr = ft_strsplit(str, '\n');
 
 	t_tetr *head = NULL;
-
 	t_tetr *tetrominos = (t_tetr*)malloc(sizeof(t_tetr));
-	tetrominos->coordx = arr[3][3];
+	head = tetrominos;
+
+	//tetrominos->coordx = arr[3][3];
 	int figura = 0;
 
-	
+	//Записать в отдельную функцию и вызывать в цикле с созданием нового листа!
 	while (i < 4)        //Находит координаты тетроминок!! Колличество тетраминок тоже из валидации
 	{					//написать валидацию на количество тетромино, опираясь на одинокий '\n' 
 		j = 0;
@@ -91,6 +92,13 @@ int	main(void)
 		}
 		i++;
 	}
+
+	tetrominos = tetrominos->next;
+
+
+
+
+
 	int minx;
 	int miny;
 	minx = tetrominos->x[0];
@@ -104,32 +112,41 @@ int	main(void)
 			miny = tetrominos->y[i];
 		i++;
 	}
-	printf("%d\n", minx);
-	printf("%d\n", miny);
+	//printf("%d\n", minx);
+	//printf("%d\n", miny);
 	i = 0;
 	while (i < 4)			//Нормализует тетроминку вычетом минимального значения!
 	{
 		tetrominos->x[i] -= minx;
 		tetrominos->y[i] -= miny;
-		printf("%d\n", tetrominos->x[i]);
-		printf("%d\n", tetrominos->y[i]);
+		//printf("%d\n", tetrominos->x[i]);
+		//printf("%d\n", tetrominos->y[i]);
 		i++;
 	}
 
-
-	map = (char **)malloc(sizeof(char *) * count); 	//Умножить на размер мапы, взять из валидации мапы
-	while (i < 6)									//СОздание Мапы
+	i = 0;
+	figura = 0;
+	map = (char **)malloc(sizeof(char *) * 10); 	//Умножить на размер мапы, взять из валидации мапы
+	while (i < 6)									//Сoздание Мапы и размещение на нее тетроминки
 	{
-		map[i] = (char *)malloc(sizeof(char *));
+		map[i] = (char *)malloc(sizeof(char *) * 10);
 		j = 0;
 		while (j < 6) 
 		{
-			map[i][j] = '.';
+			if (i == tetrominos->x[figura] && j == tetrominos->y[figura]) 	//Размещение самой тетроминки!
+			{
+				map[i][j] = '#';
+				figura++;
+			}
+			else
+			{
+				map[i][j] = '.';
+			}
+			
 			j++;
 		}
 		i++;
 	}
-
 
 
 
@@ -249,20 +266,20 @@ int	main(void)
 	// j = 0;
 
 	//JUST OUTPUT!!!!!!!!!!!!NO MORE!!!!!!!!!!!!
-	// i = 0;
-	// j = 0;
-	// while (i < 6)
-	// {
-	// 	j = 0;
-	// 	while (j < 6)
-	// 	{
-	// 		//if ()
-	// 		printf("%c", map[i][j]);
-	// 		j++;
-	// 	}
-	// 	printf("\n");
-	// 	i++;
-	// }
-	// //JUST OUTPUT!!!!!!!!!!!NO MORE!!!!!!!!!!!!!!
-	// return (0);
+	i = 0;
+	j = 0;
+	while (i < 6)
+	{
+		j = 0;
+		while (j < 6)
+		{
+			//if ()
+			printf("%c", map[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+	//JUST OUTPUT!!!!!!!!!!!NO MORE!!!!!!!!!!!!!!
+	return (0);
 }
