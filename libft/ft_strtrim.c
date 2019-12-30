@@ -6,7 +6,7 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 17:35:42 by hcloves           #+#    #+#             */
-/*   Updated: 2019/10/02 16:23:40 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/11/04 18:30:56 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char			*ft_strtrim(char const *s)
 	len--;
 	while (s[len] == '\n' || s[len] == '\t' || s[len] == ' ')
 		len--;
-	if (!(ptrs = (char *)malloc(sizeof(char) * (len - i) + 1)))
+	if (!(ptrs = (char *)malloc(sizeof(char) * (len - i) + 2)))
 	{
 		ft_strdel(&ptrs);
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: hcloves <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 14:03:55 by hcloves           #+#    #+#             */
-/*   Updated: 2019/10/01 16:52:30 by hcloves          ###   ########.fr       */
+/*   Updated: 2019/11/04 18:34:55 by hcloves          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ char		*ft_itoa(int n)
 	sign = (n < 0) ? 1 : 0;
 	n = (sign == 1) ? (n *= -1) : (n *= 1);
 	count = ft_clen(n);
-	if (!(numstr = ft_strnew(count)))
+	if (!(numstr = ft_strnew(count + sign)))
 		return (NULL);
-	if (!(numstr2 = ft_strnew(count)))
+	if (!(numstr2 = ft_strnew(count + sing)))
 		return (NULL);
 	while (i < count - 1)
 	{
